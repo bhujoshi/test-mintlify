@@ -1,0 +1,147 @@
+---
+title: "Fix Common Issues in Divine Presence"
+sidebarTitle: "Troubleshooting"
+description: "Resolve the most common Divine Presence issues — slow temple loading, silent audio, broken animations, and login problems — with step-by-step fixes."
+---
+
+Most issues in Divine Presence are related to browser compatibility, device performance, or audio permissions — and the large majority can be resolved in just a few steps without contacting support. Work through the relevant section below and your experience should be back to normal quickly.
+
+## Common Issues
+
+<AccordionGroup>
+  <Accordion title="Temple loads slowly or lags">
+    Slow loading and choppy frame rates are almost always caused by either a limited internet connection or a device that needs the graphics settings reduced.
+
+    <Steps>
+      <Step title="Check your internet connection">
+        Open another website or run a speed test to confirm your connection is stable. Divine Presence requires a minimum of 5 Mbps for a smooth experience. If your connection is slow, move closer to your router or switch to a wired connection.
+      </Step>
+      <Step title="Lower the Graphics Quality setting">
+        Open **Settings > Graphics** inside the temple and change **Graphics Quality** from High to **Medium** or **Low**. This reduces the resolution of textures and lighting effects and is the single most effective way to improve performance on older hardware.
+      </Step>
+      <Step title="Disable particle effects">
+        In the same **Settings > Graphics** panel, toggle off **Particle Effects**. Particle systems — incense smoke, flower petals, flame flicker — are visually rich but GPU-intensive. Disabling them noticeably reduces lag during offering animations.
+      </Step>
+      <Step title="Close other browser tabs">
+        Each open tab consumes memory and CPU resources. Close any tabs you are not actively using, especially those running video or other 3D applications, then return to Divine Presence.
+      </Step>
+      <Step title="Switch to Chrome">
+        Chrome has the most mature WebGL implementation of any desktop browser. If you are using Firefox, Safari, or Edge and experiencing persistent lag, try opening Divine Presence in **Chrome 90 or later** for the best rendering performance.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="No sound / devotional music not playing">
+    Browsers enforce strict autoplay policies that prevent audio from starting until the user interacts with the page. Follow these steps to restore audio.
+
+    <Steps>
+      <Step title="Click anywhere inside the temple">
+        Many browsers block autoplay audio by default. A single click or tap anywhere on the temple canvas signals user intent and allows the audio context to start. The devotional music should begin within a second or two.
+      </Step>
+      <Step title="Check your device's silent mode">
+        Ensure your device is not set to silent or Do Not Disturb. On mobile, check the physical mute switch (on iPhone) or the quick-settings audio tile (on Android). On desktop, verify the system volume is not muted.
+      </Step>
+      <Step title="Verify the in-app volume setting">
+        Open **Settings > Audio** and confirm that **Music Volume** is set above zero. Also check that **Sound Effects** and **Bell & Aarti Audio** are enabled if you want to hear offering sounds in addition to background music.
+      </Step>
+      <Step title="Check browser site permissions">
+        In Chrome, click the padlock icon in the address bar and select **Site settings**. Confirm that **Sound** is set to **Allow**. In Firefox, go to **Preferences > Privacy & Security > Permissions > Autoplay** and add Divine Presence to the allowed list. Refresh the page after changing permissions.
+      </Step>
+    </Steps>
+
+    <Tip>
+      If you are using a Bluetooth speaker or headset, confirm it is connected and set as the active audio output device in your operating system's sound settings.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Offering animation doesn't play">
+    When an offering animation fails to trigger, the cause is usually that Offering Mode was not fully activated, or that WebGL encountered an issue mid-session.
+
+    <Steps>
+      <Step title="Confirm you are in Offering Mode">
+        Before selecting an offering, click the **Offer** button in the bottom toolbar. The camera must zoom in and focus on the deity's idol before the offering tray becomes active. If the camera has not moved, tap or click the deity's idol directly to re-center the view.
+      </Step>
+      <Step title="Verify WebGL is enabled">
+        Navigate to **chrome://gpu** (Chrome) or **about:support** (Firefox) in a new tab and look for the WebGL entry. It should read **Hardware accelerated**. If it shows **Software only** or **Blocked**, update your graphics drivers and re-enable hardware acceleration in your browser settings.
+      </Step>
+      <Step title="Refresh the page and try again">
+        A stale WebGL context can occasionally prevent animations from rendering. Press **F5** (or **Cmd + R** on Mac) to reload the temple, navigate back to Offering Mode, and attempt the offering again.
+      </Step>
+      <Step title="Bring the browser tab to the foreground (mobile)">
+        On mobile, browsers may throttle or pause WebGL rendering when a tab is in the background. Make sure the Divine Presence tab is the active, visible tab and that the screen has not auto-locked. Disable auto-lock temporarily if the offering animation is particularly long.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Cannot see deity idol / temple appears black">
+    A completely black or blank temple viewport almost always means your browser is not rendering WebGL 2.0 correctly.
+
+    <Steps>
+      <Step title="Check WebGL 2.0 support">
+        Open a new tab and visit **chrome://gpu** in Chrome or go to [get.webgl.org](https://get.webgl.org) in any browser. If the spinning cube does not appear, your browser or device does not currently support WebGL. A black viewport confirms the same issue.
+      </Step>
+      <Step title="Update your browser">
+        Install the latest version of your browser. WebGL 2.0 support and GPU blocklist entries change frequently with browser updates. An outdated browser may have WebGL features blocked even on capable hardware.
+      </Step>
+      <Step title="Disable conflicting browser extensions">
+        Some privacy-focused or ad-blocking extensions intercept or disable WebGL APIs. Open your browser's Extensions page and temporarily disable all extensions, then reload Divine Presence. If the temple renders correctly, re-enable extensions one at a time to identify the culprit.
+      </Step>
+      <Step title="Try a different browser">
+        If the above steps do not resolve the issue, open Divine Presence in a different supported browser — Chrome, Firefox, Safari 14+, or Edge 90+. This helps confirm whether the problem is browser-specific or device-level.
+      </Step>
+    </Steps>
+
+    <Warning>
+      If WebGL 2.0 is unavailable because your device's GPU is too old or unsupported, Divine Presence cannot render the 3D temple. Consider accessing the platform from a more recent device.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Daily reminder notifications not arriving">
+    Browser notification delivery depends on both the site's permission status and your operating system's notification settings.
+
+    <Steps>
+      <Step title="Grant notification permission in your browser">
+        Open your browser's **Site Settings** for Divine Presence (click the padlock in the address bar) and set **Notifications** to **Allow**. If the option reads **Blocked**, you need to remove the block and refresh the page, then accept the permission prompt that appears.
+      </Step>
+      <Step title="Enable reminders inside the app">
+        Go to **Settings > Notifications** inside Divine Presence and confirm that **Daily Worship Reminder** is toggled on. Also verify that the reminder time is set correctly for your local time zone.
+      </Step>
+      <Step title="Add the site to your browser's allowed notification list">
+        In Chrome, go to **Settings > Privacy and security > Site settings > Notifications** and confirm that `divinepresence.app` appears under the **Allowed** list, not the **Blocked** list. In Firefox, check **Preferences > Privacy & Security > Permissions > Notifications**.
+      </Step>
+    </Steps>
+
+    <Note>
+      On macOS and Windows, your operating system can also suppress browser notifications globally. Check **System Preferences > Notifications** (macOS) or **Settings > System > Notifications** (Windows) and ensure your browser is allowed to show notifications.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Account login issues">
+    If you cannot sign in to Divine Presence, try the steps below before contacting support.
+
+    <Steps>
+      <Step title="Reset your password">
+        On the login screen, click **Forgot Password** and enter the email address associated with your account. You will receive a reset link within a few minutes. Check your spam or junk folder if the email does not appear in your inbox.
+      </Step>
+      <Step title="Enable third-party cookies for social sign-in">
+        If you are using **Sign in with Google** or another social provider, your browser must allow third-party cookies for the authentication flow to complete. In Chrome, go to **Settings > Privacy and security > Cookies** and ensure third-party cookies are not blocked. In Safari, disable **Prevent cross-site tracking** under **Preferences > Privacy** temporarily.
+      </Step>
+      <Step title="Clear browser cache and cookies">
+        Corrupted or stale session data can prevent login from completing. Clear your browser's cache and cookies, close and reopen the browser, then navigate to Divine Presence and try signing in again.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  If you have worked through the relevant steps above and the issue persists, our support team is here to help. Send a description of the problem — including your browser version, device type, and any error messages you see — to **support@divinepresence.app** and we will respond within one business day.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Frequently Asked Questions" icon="circle-question" href="/support/faq">
+    Browse answers to common questions about offerings, deities, subscriptions, and account management.
+  </Card>
+  <Card title="Account Setup Guide" icon="user-plus" href="/account-setup">
+    Learn how to create your account, configure your shrine, and enable premium features.
+  </Card>
+</CardGroup>

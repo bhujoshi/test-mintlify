@@ -1,13 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "projectType": "saas",
+  "projectName": "Divine Presence",
+  "projectDescription": "A 3D interactive worship experience where devotees can offer flowers, water, and other sacred items to deities in an immersive virtual temple.",
   "theme": "almond",
-  "name": "Divine Presence",
-  "colors": {
-    "primary": "#ef7025",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
-  },
-  "favicon": "/favicon.svg",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
   "navigation": {
     "tabs": [
       {
@@ -57,14 +55,23 @@
       }
     ]
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Enter Temple",
-      "href": "https://app.divinepresence.app"
-    }
-  },
-  "footer": {
-    "socials": {}
-  }
+  "keyFeatures": [
+    "Immersive 3D virtual temple environment",
+    "Interactive flower and water offerings to deities",
+    "Multiple deity shrines to choose from",
+    "Guided prayer and mantra sequences",
+    "Customizable personal altar",
+    "Incense and lamp (aarti) offering rituals",
+    "Ambient soundscapes and devotional music",
+    "Daily worship reminders and streaks"
+  ],
+  "publicApiSurface": [
+    "Offering interactions (flowers, water, incense, lamps)",
+    "Deity shrine selection",
+    "Altar customization settings",
+    "Prayer and mantra playback",
+    "Ambient audio controls",
+    "User account and worship history",
+    "Daily reminder preferences"
+  ]
 }
